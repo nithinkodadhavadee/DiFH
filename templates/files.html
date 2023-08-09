@@ -1,0 +1,44 @@
+{% extends'base.html' %}
+{% block head %}
+<title>hash</title>
+{% endblock %}
+{% block body %}
+<h1>Admin Page</h1>
+<h4>
+    List of all registered users.
+</h4>
+<div>
+    <!-- <form action="/login" method="post">
+        <label for="uname">User Name:</label>
+        <input type="text" name="username" id="uname"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="login">
+
+    </form> -->
+    <div>
+        <table>
+            <tr>
+                <!-- <th>Sl. No</th> -->
+                <th>User</th>
+                <th></th>
+            </tr>
+            {% set count = 1 %}
+            {% set temp = 1 %}
+            {% for x in contentDiv %}
+                <tr>
+                    <!-- <td>
+                        {{ count }}
+                        {% set temp = count %}
+                        {% set count = temp+1 %}
+                    </td> -->
+                    <td> {{x.id}} </td>
+                    <td> {{ x.username }} </td>
+                    <td> {{ x.hash }} </td>
+                    <td> <a href="http://localhost:5000/deleteFile/{{ x.id }}"> <button>Delete File</button> </a> </td>
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

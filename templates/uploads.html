@@ -1,0 +1,50 @@
+{% extends'base.html' %}
+{% block head %}
+<title>hash</title>
+{% endblock %}
+{% block body %}
+<h1>Web Hosting over Blockchain</h1>
+<h4>uploads</h4>
+<div>
+    <!-- <form action="/login" method="post">
+        <label for="uname">User Name:</label>
+        <input type="text" name="username" id="uname"><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="login">
+
+    </form> -->
+    <a href="http://localhost:5000/login"> <button>login</button> </a>
+    <a href="http://localhost:5000/signup"> <button>signup</button> </a>
+    <a href="http://localhost:5000/user"> <button>Profile</button> </a>
+    <a href="http://localhost:5000/logout"> <button>Logout</button> </a> <br><br>
+    <a href="http://localhost:5000/dash"> <button>Dash</button></a>
+
+    <div>
+        <table>
+            <tr>
+                <!-- <th>Sl. No</th> -->
+                <th></th>
+                <th>Project</th>
+                <th>link</th>
+            </tr>
+            {% set count = 1 %}
+            {% set temp = 1 %}
+            {% for x in contentDiv %}
+                <tr>
+                    <!-- {% set count = count+1 %} -->
+                    <td>
+                        <!-- {{ count }}
+                        {% set temp = count %}
+                        {% set count = temp+1 %} -->
+                    </td>
+                    <!-- <td> {{ 1 }} </td> -->
+                    <td> {{ x }} </td>
+                    <td> <a href="http://localhost:5000/project/{{ x }}"><button>View Project</button></a> </td>
+                    <!-- <td> <a href="http://localhost:5000/updateFile/{{ x }}"><button>Update</button></a> </td> -->
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
